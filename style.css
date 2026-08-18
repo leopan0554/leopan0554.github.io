@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light;
+  --ink: #17212b;
+  --muted: #5d6874;
+  --line: #d9e0e7;
+  --bg: #f4f7f9;
+  --surface: #ffffff;
+  --accent: #176b73;
+  --accent-strong: #0d5057;
+  --focus: #1769ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.page {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+.hero,
+.content {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.hero {
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow,
+.tag {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.18;
+}
+
+h2 {
+  margin: 32px 0 8px;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+h3 {
+  margin: 22px 0 4px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+p,
+ul {
+  margin: 0 0 14px;
+}
+
+.lead,
+.muted {
+  color: var(--muted);
+}
+
+.lead {
+  max-width: 680px;
+  font-size: 1.1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 700;
+  background: var(--surface);
+}
+
+.button.primary {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.app-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.app-card h2 {
+  margin-top: 0;
+}
+
+.back {
+  margin-top: 24px;
+}
+
+@media (max-width: 560px) {
+  .page {
+    width: min(100% - 20px, 960px);
+    padding: 24px 0;
+  }
+
+  .hero,
+  .content {
+    padding: 22px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
